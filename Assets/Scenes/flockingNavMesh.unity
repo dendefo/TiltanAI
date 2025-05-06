@@ -132,7 +132,6 @@ GameObject:
   - component: {fileID: 142727914}
   - component: {fileID: 142727913}
   - component: {fileID: 142727912}
-  - component: {fileID: 142727911}
   m_Layer: 0
   m_Name: Tank (6)
   m_TagString: Flockmate
@@ -140,24 +139,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &142727911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 142727910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50719450c83c5df45a64d39c378c8e54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {fileID: 431772233}
-  neighborRadius: 3
-  separationRadius: 1.5
-  cohesionWeight: 1
-  alignmentWeight: 1
-  separationWeight: 2
 --- !u!195 &142727912
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1105,7 +1086,6 @@ GameObject:
   - component: {fileID: 769199565}
   - component: {fileID: 769199564}
   - component: {fileID: 769199563}
-  - component: {fileID: 769199562}
   m_Layer: 0
   m_Name: Tank (8)
   m_TagString: Flockmate
@@ -1113,24 +1093,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &769199562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769199561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50719450c83c5df45a64d39c378c8e54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {fileID: 431772233}
-  neighborRadius: 3
-  separationRadius: 1.5
-  cohesionWeight: 1
-  alignmentWeight: 1
-  separationWeight: 2
 --- !u!195 &769199563
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1344,7 +1306,6 @@ GameObject:
   - component: {fileID: 920708464}
   - component: {fileID: 920708463}
   - component: {fileID: 920708462}
-  - component: {fileID: 920708461}
   m_Layer: 0
   m_Name: Tank (7)
   m_TagString: Flockmate
@@ -1352,24 +1313,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &920708461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920708460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50719450c83c5df45a64d39c378c8e54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {fileID: 431772233}
-  neighborRadius: 3
-  separationRadius: 1.5
-  cohesionWeight: 1
-  alignmentWeight: 1
-  separationWeight: 2
 --- !u!195 &920708462
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1840,7 +1783,6 @@ GameObject:
   - component: {fileID: 1260550758}
   - component: {fileID: 1260550757}
   - component: {fileID: 1260550756}
-  - component: {fileID: 1260550755}
   m_Layer: 0
   m_Name: Tank (1)
   m_TagString: Flockmate
@@ -1848,24 +1790,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1260550755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260550754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50719450c83c5df45a64d39c378c8e54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {fileID: 431772233}
-  neighborRadius: 3
-  separationRadius: 1.5
-  cohesionWeight: 1
-  alignmentWeight: 1
-  separationWeight: 2
 --- !u!195 &1260550756
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2463,7 +2387,6 @@ GameObject:
   - component: {fileID: 1407135841}
   - component: {fileID: 1407135840}
   - component: {fileID: 1407135839}
-  - component: {fileID: 1407135838}
   m_Layer: 0
   m_Name: Tank (2)
   m_TagString: Flockmate
@@ -2471,24 +2394,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1407135838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1407135837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50719450c83c5df45a64d39c378c8e54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {fileID: 431772233}
-  neighborRadius: 3
-  separationRadius: 1.5
-  cohesionWeight: 1
-  alignmentWeight: 1
-  separationWeight: 2
 --- !u!195 &1407135839
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2764,7 +2669,6 @@ GameObject:
   - component: {fileID: 1802569924}
   - component: {fileID: 1802569923}
   - component: {fileID: 1802569922}
-  - component: {fileID: 1802569921}
   m_Layer: 0
   m_Name: Tank (4)
   m_TagString: Flockmate
@@ -2772,24 +2676,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1802569921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1802569920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50719450c83c5df45a64d39c378c8e54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {fileID: 431772233}
-  neighborRadius: 3
-  separationRadius: 1.5
-  cohesionWeight: 1
-  alignmentWeight: 1
-  separationWeight: 2
 --- !u!195 &1802569922
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2916,7 +2802,6 @@ GameObject:
   - component: {fileID: 1815605079}
   - component: {fileID: 1815605078}
   - component: {fileID: 1815605077}
-  - component: {fileID: 1815605076}
   m_Layer: 0
   m_Name: Tank (5)
   m_TagString: Flockmate
@@ -2924,24 +2809,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1815605076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1815605075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50719450c83c5df45a64d39c378c8e54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {fileID: 431772233}
-  neighborRadius: 3
-  separationRadius: 1.5
-  cohesionWeight: 1
-  alignmentWeight: 1
-  separationWeight: 2
 --- !u!195 &1815605077
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3068,7 +2935,6 @@ GameObject:
   - component: {fileID: 1821690243}
   - component: {fileID: 1821690242}
   - component: {fileID: 1821690241}
-  - component: {fileID: 1821690240}
   m_Layer: 0
   m_Name: Tank (3)
   m_TagString: Flockmate
@@ -3076,24 +2942,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1821690240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1821690239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50719450c83c5df45a64d39c378c8e54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {fileID: 431772233}
-  neighborRadius: 3
-  separationRadius: 1.5
-  cohesionWeight: 1
-  alignmentWeight: 1
-  separationWeight: 2
 --- !u!195 &1821690241
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3436,7 +3284,6 @@ GameObject:
   - component: {fileID: 1869100888}
   - component: {fileID: 1869100893}
   - component: {fileID: 1869100895}
-  - component: {fileID: 1869100894}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Flockmate
@@ -3535,24 +3382,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 32.39441, y: 14.921806, z: 43.5339}
   m_Center: {x: -0.350885, y: 7.4609146, z: -0.016777996}
---- !u!114 &1869100894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869100886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50719450c83c5df45a64d39c378c8e54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {fileID: 431772233}
-  neighborRadius: 3
-  separationRadius: 1.5
-  cohesionWeight: 1
-  alignmentWeight: 1
-  separationWeight: 2
 --- !u!195 &1869100895
 NavMeshAgent:
   m_ObjectHideFlags: 0
