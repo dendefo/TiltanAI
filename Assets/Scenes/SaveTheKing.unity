@@ -282,9 +282,9 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 32.39441, y: 14.921806, z: 43.5339}
+  m_Size: {x: 45, y: 20, z: 60}
   m_Center: {x: -0.350885, y: 7.4609146, z: -0.016777996}
 --- !u!23 &116179090
 MeshRenderer:
@@ -349,11 +349,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 116179085}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca4afcaf2b063b46a16950733e45815, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e64d8ac93014a6894e34646b93ef648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  formationSpacing: 50
+  updateInterval: 0.1
+  kingMoveSpeed: 5
   targetPosition: {fileID: 431772233}
-  formationSpacing: 2
+  minimalDistance: 3
 --- !u!1 &142727910
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,9 +417,9 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 32.39441, y: 14.921806, z: 43.5339}
+  m_Size: {x: 45, y: 20, z: 60}
   m_Center: {x: -0.350885, y: 7.4609146, z: -0.016777996}
 --- !u!23 &142727914
 MeshRenderer:
@@ -497,11 +500,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 142727910}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca4afcaf2b063b46a16950733e45815, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e64d8ac93014a6894e34646b93ef648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  formationSpacing: 50
+  updateInterval: 0.1
+  kingMoveSpeed: 5
   targetPosition: {fileID: 431772233}
-  formationSpacing: 2
+  minimalDistance: 3
 --- !u!1 &256994791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,9 +1389,9 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 32.39441, y: 14.921806, z: 43.5339}
+  m_Size: {x: 45, y: 20, z: 60}
   m_Center: {x: -0.350885, y: 7.4609146, z: -0.016777996}
 --- !u!23 &769199565
 MeshRenderer:
@@ -1466,11 +1472,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 769199561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca4afcaf2b063b46a16950733e45815, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e64d8ac93014a6894e34646b93ef648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  formationSpacing: 50
+  updateInterval: 0.1
+  kingMoveSpeed: 5
   targetPosition: {fileID: 431772233}
-  formationSpacing: 2
+  minimalDistance: 3
 --- !u!1 &787715909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1618,9 +1627,9 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 32.39441, y: 14.921806, z: 43.5339}
+  m_Size: {x: 45, y: 20, z: 60}
   m_Center: {x: -0.350885, y: 7.4609146, z: -0.016777996}
 --- !u!23 &920708464
 MeshRenderer:
@@ -1701,11 +1710,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 920708460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca4afcaf2b063b46a16950733e45815, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e64d8ac93014a6894e34646b93ef648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  formationSpacing: 50
+  updateInterval: 0.1
+  kingMoveSpeed: 5
   targetPosition: {fileID: 431772233}
-  formationSpacing: 2
+  minimalDistance: 3
 --- !u!1 &946810762
 GameObject:
   m_ObjectHideFlags: 0
@@ -2213,9 +2225,9 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 32.39441, y: 14.921806, z: 43.5339}
+  m_Size: {x: 45, y: 20, z: 60}
   m_Center: {x: -0.350885, y: 7.4609146, z: -0.016777996}
 --- !u!23 &1242934816
 MeshRenderer:
@@ -2280,11 +2292,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1242934811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca4afcaf2b063b46a16950733e45815, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e64d8ac93014a6894e34646b93ef648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  formationSpacing: 50
+  updateInterval: 0.1
+  kingMoveSpeed: 5
   targetPosition: {fileID: 431772233}
-  formationSpacing: 2
+  minimalDistance: 3
 --- !u!1 &1260550754
 GameObject:
   m_ObjectHideFlags: 0
@@ -2300,8 +2315,8 @@ GameObject:
   - component: {fileID: 1260550756}
   - component: {fileID: 1260550761}
   m_Layer: 0
-  m_Name: Tank (1)
-  m_TagString: Flockmate
+  m_Name: TankKing
+  m_TagString: King
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2345,9 +2360,9 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 32.39441, y: 14.921806, z: 43.5339}
+  m_Size: {x: 45, y: 20, z: 60}
   m_Center: {x: -0.350885, y: 7.4609146, z: -0.016777996}
 --- !u!23 &1260550758
 MeshRenderer:
@@ -2428,11 +2443,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1260550754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca4afcaf2b063b46a16950733e45815, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e64d8ac93014a6894e34646b93ef648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  formationSpacing: 50
+  updateInterval: 0.1
+  kingMoveSpeed: 70
   targetPosition: {fileID: 431772233}
-  formationSpacing: 2
+  minimalDistance: 3
 --- !u!1 &1288038138
 GameObject:
   m_ObjectHideFlags: 0
@@ -2964,9 +2982,9 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 32.39441, y: 14.921806, z: 43.5339}
+  m_Size: {x: 45, y: 20, z: 60}
   m_Center: {x: -0.350885, y: 7.4609146, z: -0.016777996}
 --- !u!23 &1407135841
 MeshRenderer:
@@ -3047,11 +3065,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1407135837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca4afcaf2b063b46a16950733e45815, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e64d8ac93014a6894e34646b93ef648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  formationSpacing: 50
+  updateInterval: 0.1
+  kingMoveSpeed: 5
   targetPosition: {fileID: 431772233}
-  formationSpacing: 2
+  minimalDistance: 3
 --- !u!1 &1457356803
 GameObject:
   m_ObjectHideFlags: 0
@@ -3382,9 +3403,9 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 32.39441, y: 14.921806, z: 43.5339}
+  m_Size: {x: 45, y: 20, z: 60}
   m_Center: {x: -0.350885, y: 7.4609146, z: -0.016777996}
 --- !u!23 &1741665807
 MeshRenderer:
@@ -3449,11 +3470,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1741665802}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca4afcaf2b063b46a16950733e45815, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e64d8ac93014a6894e34646b93ef648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  formationSpacing: 50
+  updateInterval: 0.1
+  kingMoveSpeed: 5
   targetPosition: {fileID: 431772233}
-  formationSpacing: 2
+  minimalDistance: 3
 --- !u!1 &1756278744
 GameObject:
   m_ObjectHideFlags: 0
@@ -3632,9 +3656,9 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 32.39441, y: 14.921806, z: 43.5339}
+  m_Size: {x: 45, y: 20, z: 60}
   m_Center: {x: -0.350885, y: 7.4609146, z: -0.016777996}
 --- !u!23 &1802569924
 MeshRenderer:
@@ -3715,11 +3739,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1802569920}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca4afcaf2b063b46a16950733e45815, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e64d8ac93014a6894e34646b93ef648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  formationSpacing: 50
+  updateInterval: 0.1
+  kingMoveSpeed: 5
   targetPosition: {fileID: 431772233}
-  formationSpacing: 2
+  minimalDistance: 3
 --- !u!1 &1815605075
 GameObject:
   m_ObjectHideFlags: 0
@@ -3780,9 +3807,9 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 32.39441, y: 14.921806, z: 43.5339}
+  m_Size: {x: 45, y: 20, z: 60}
   m_Center: {x: -0.350885, y: 7.4609146, z: -0.016777996}
 --- !u!23 &1815605079
 MeshRenderer:
@@ -3863,11 +3890,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1815605075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca4afcaf2b063b46a16950733e45815, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e64d8ac93014a6894e34646b93ef648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  formationSpacing: 50
+  updateInterval: 0.1
+  kingMoveSpeed: 5
   targetPosition: {fileID: 431772233}
-  formationSpacing: 2
+  minimalDistance: 3
 --- !u!1 &1821690239
 GameObject:
   m_ObjectHideFlags: 0
@@ -3928,9 +3958,9 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 32.39441, y: 14.921806, z: 43.5339}
+  m_Size: {x: 45, y: 20, z: 60}
   m_Center: {x: -0.350885, y: 7.4609146, z: -0.016777996}
 --- !u!23 &1821690243
 MeshRenderer:
@@ -4011,11 +4041,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1821690239}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca4afcaf2b063b46a16950733e45815, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e64d8ac93014a6894e34646b93ef648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  formationSpacing: 50
+  updateInterval: 0.1
+  kingMoveSpeed: 5
   targetPosition: {fileID: 431772233}
-  formationSpacing: 2
+  minimalDistance: 3
 --- !u!1 &1839409182
 GameObject:
   m_ObjectHideFlags: 0
@@ -4409,9 +4442,9 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 32.39441, y: 14.921806, z: 43.5339}
+  m_Size: {x: 45, y: 20, z: 60}
   m_Center: {x: -0.350885, y: 7.4609146, z: -0.016777996}
 --- !u!23 &1998696493
 MeshRenderer:
@@ -4476,11 +4509,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1998696488}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca4afcaf2b063b46a16950733e45815, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e64d8ac93014a6894e34646b93ef648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  formationSpacing: 50
+  updateInterval: 0.1
+  kingMoveSpeed: 5
   targetPosition: {fileID: 431772233}
-  formationSpacing: 2
+  minimalDistance: 3
 --- !u!1 &2055461117
 GameObject:
   m_ObjectHideFlags: 0
