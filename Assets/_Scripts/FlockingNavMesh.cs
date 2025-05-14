@@ -29,8 +29,9 @@ public class FlockingNavMesh : MonoBehaviour
     void Update()
     {
         Vector3 flockingForce = CalculateFlockingForce();
+
         navAgent.velocity = navAgent.desiredVelocity + flockingForce;
-        
+
 
         // Optionally, you can also re-set the destination to ensure agents keep moving towards the target
         //navAgent.SetDestination(targetPosition.position);
@@ -56,6 +57,7 @@ public class FlockingNavMesh : MonoBehaviour
                 {
                     separation += (transform.position - mate.position);
                 }
+
                 neighborCount++;
             }
         }

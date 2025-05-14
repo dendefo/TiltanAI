@@ -8,6 +8,11 @@ TagManager:
   - LevelCamera
   - Flockmate
   - King
+  - MedKit
+  - Group A
+  - Group B
+  - Group C
+  - Group D
   layers:
   - Default
   - TransparentFX
@@ -17,7 +22,7 @@ TagManager:
   - UI
   - Player
   - Coin
-  - 
+  - Agents
   - 
   - 
   - 
