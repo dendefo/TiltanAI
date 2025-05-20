@@ -8,6 +8,7 @@ public class PathFinding : MonoBehaviour
     void Awake()
     {
         grid = GetComponent<GridManager>();
+        
     }
 
     public List<Node> FindPathBFS(Vector3 startPos, Vector3 targetPos)
