@@ -11,6 +11,46 @@ public class PathFinding : MonoBehaviour
         
     }
 
+    public List<Node> FindPathDFS(Vector3 startPos, Vector3 targetPos)
+    {
+        Node startNode = grid.GetNodeFromWorldPoint(startPos);
+        Node targetNode = grid.GetNodeFromWorldPoint(targetPos);
+
+        List<Node> path = new List<Node>();
+        HashSet<Node> visited = new HashSet<Node>();
+        Dictionary<Node, Node> parentMap = new Dictionary<Node, Node>();
+        // Use a stack for DFS
+        Stack<Node> stack = new Stack<Node>();
+
+        stack.Push(startNode);
+        visited.Add(startNode);
+
+        while (stack.Count > 0)
+        {
+            Node current = stack.Pop();
+
+            if (current == targetNode)
+            {
+                // Path found, reconstruct it
+                path = RetracePath(startNode, targetNode, parentMap);
+                return path;
+            }
+
+            foreach (Node neighbor in grid.GetNeighbors(current))
+            {
+                if (!visited.Contains(neighbor) && neighbor.walkable)
+                {
+                    visited.Add(neighbor);
+                    parentMap[neighbor] = current;
+                    stack.Push(neighbor);
+                }
+            }
+        }
+
+        
+        return path;
+    }
+
     public List<Node> FindPathBFS(Vector3 startPos, Vector3 targetPos)
     {
         Node startNode = grid.GetNodeFromWorldPoint(startPos);
@@ -19,6 +59,7 @@ public class PathFinding : MonoBehaviour
         List<Node> path = new List<Node>();
         HashSet<Node> visited = new HashSet<Node>();
         Dictionary<Node, Node> parentMap = new Dictionary<Node, Node>();
+        // Use a queue for BFS
         Queue<Node> queue = new Queue<Node>();
 
         queue.Enqueue(startNode);
