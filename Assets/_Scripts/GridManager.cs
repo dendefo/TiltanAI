@@ -47,7 +47,6 @@ public class GridManager : MonoBehaviour
     }
     
     
-    public List<Node> path; // Store path from Pathfinder for debug drawing
 
     public Node GetNodeFromWorldPoint(Vector3 worldPosition)
     {
@@ -137,14 +136,7 @@ public class GridManager : MonoBehaviour
                 Gizmos.DrawWireCube(node.worldPosition, Vector3.one * (nodeDiameter - 0.1f));
             }
             
-            if (path != null)
-            {
-                foreach (Node node in path)
-                {
-                    Gizmos.color = Color.green;
-                    Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - 0.2f));
-                }
-            }
+           
         }
     }
 #endif
