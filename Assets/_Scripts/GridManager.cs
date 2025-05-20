@@ -45,6 +45,45 @@ public class GridManager : MonoBehaviour
             }
         }
     }
+    
+    
+    public List<Node> path; // Store path from Pathfinder for debug drawing
+
+    public Node GetNodeFromWorldPoint(Vector3 worldPosition)
+    {
+        float percentX = Mathf.Clamp01((worldPosition.x + gridWorldSize.x / 2) / gridWorldSize.x);
+        float percentY = Mathf.Clamp01((worldPosition.z + gridWorldSize.y / 2) / gridWorldSize.y);
+
+        int x = Mathf.RoundToInt((gridSizeX - 1) * percentX);
+        int y = Mathf.RoundToInt((gridSizeY - 1) * percentY);
+
+        return grid[x, y];
+    }
+
+    public List<Node> GetNeighbors(Node node)
+    {
+        List<Node> neighbors = new List<Node>();
+
+        for (int x = -1; x <= 1; x++)
+        {
+            for (int y = -1; y <= 1; y++)
+            {
+                // Skip self and diagonals
+                if (x == 0 && y == 0) continue;
+                if (Mathf.Abs(x) + Mathf.Abs(y) > 1) continue;
+
+                int checkX = node.gridX + x;
+                int checkY = node.gridY + y;
+
+                if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeY)
+                {
+                    neighbors.Add(grid[checkX, checkY]);
+                }
+            }
+        }
+
+        return neighbors;
+    }
 
     // Optional: Draw the grid in the editor
 #if UNITY_EDITOR
@@ -96,6 +135,15 @@ public class GridManager : MonoBehaviour
                     new Color(1, 1, 1, 0.9f) : // More opaque white
                     new Color(1, 0, 0, 0.9f);  // More opaque red
                 Gizmos.DrawWireCube(node.worldPosition, Vector3.one * (nodeDiameter - 0.1f));
+            }
+            
+            if (path != null)
+            {
+                foreach (Node node in path)
+                {
+                    Gizmos.color = Color.green;
+                    Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - 0.2f));
+                }
             }
         }
     }
