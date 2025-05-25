@@ -46,7 +46,20 @@ public class GridManager : MonoBehaviour
         }
     }
     
-    
+    public IEnumerable<Node> GetAllNodes()
+    {
+        if (grid == null)
+            yield break;
+
+        for (int x = 0; x < gridSizeX; x++)
+        {
+            for (int y = 0; y < gridSizeY; y++)
+            {
+                if (grid[x, y] != null)
+                    yield return grid[x, y];
+            }
+        }
+    }
 
     public Node GetNodeFromWorldPoint(Vector3 worldPosition)
     {
@@ -140,4 +153,7 @@ public class GridManager : MonoBehaviour
         }
     }
 #endif
+
+
+    
 }

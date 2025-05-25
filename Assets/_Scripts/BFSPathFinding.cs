@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class BFSPathFinding : IPathFindingStrategy
 {
-    public PathFindingResult FindPath(GridManager grid, Vector3 startPos, Vector3 targetPos)
+   // the function is virtual so it can be overridden in derived pathfinding strategies
+    public virtual PathFindingResult FindPath(GridManager grid, Vector3 startPos, Vector3 targetPos)
     {
         Node startNode = grid.GetNodeFromWorldPoint(startPos);
         Node targetNode = grid.GetNodeFromWorldPoint(targetPos);
