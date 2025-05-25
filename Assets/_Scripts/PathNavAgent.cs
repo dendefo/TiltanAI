@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class PathNavAgent : MonoBehaviour
 {
     private PathFinding pathFinder;
-    private PathFindingResult currentPathResult;
+    private PathFindingResult currentPathResult = new PathFindingResult(new List<Node>(), 0);
     
     [Tooltip("Current target position for pathfinding")]
     public Vector3 someTargetPosition;
@@ -103,16 +103,25 @@ public class PathNavAgent : MonoBehaviour
 
     private void OnGUI()
     {
+        GUIStyle style = new GUIStyle(GUI.skin.label);
+        style.fontSize = 20; 
+        style.normal.textColor = Color.white; 
+        GUI.backgroundColor = new Color(0, 0, 0, 0.7f);
+        GUI.Box(new Rect(10, 10, 400, 120), ""); 
+
         if (currentPathResult.Path == null || currentPathResult.Path.Count == 0)
         {
-            GUI.Label(new Rect(10, 10, 300, 60), "No path found.");
+            GUI.Label(new Rect(20, 20, 380, 100), "No path found.", style);
             return;
         }
-        GUI.Label(new Rect(10, 10, 300, 60), 
+
+        GUI.Label(new Rect(20, 20, 380, 100), 
             $"Path length: {currentPathResult.Path.Count}\n" +
             $"Nodes processed: {currentPathResult.NodesProcessed}\n" +
-            $"Strategy: {pathFindingStrategy}");
+            $"Strategy: {pathFindingStrategy}", 
+            style);
     }
+
 
     public void SetPathFindingStrategy(PathFindingStrategy newStrategy)
     {
