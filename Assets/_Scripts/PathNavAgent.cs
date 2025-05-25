@@ -25,10 +25,13 @@ public class PathNavAgent : MonoBehaviour
     [SerializeField] private bool showPathGizmos = true;
 
 
-    void Start()
+    
+    void Awake()
     {
-        pathFinder = FindObjectOfType<PathFinding>();
+        var gridManager = FindFirstObjectByType<GridManager>();
+        pathFinder = new PathFinding(gridManager);
     }
+
 
     
     void Update()

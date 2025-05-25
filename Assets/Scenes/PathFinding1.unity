@@ -5440,7 +5440,6 @@ GameObject:
   m_Component:
   - component: {fileID: 776018490}
   - component: {fileID: 776018491}
-  - component: {fileID: 776018492}
   m_Layer: 10
   m_Name: NavGrid
   m_TagString: Untagged
@@ -5480,18 +5479,6 @@ MonoBehaviour:
   unwalkableMask:
     serializedVersion: 2
     m_Bits: 512
---- !u!114 &776018492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 776018489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 270ee72e417042e9bbea15b163c194ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &801047906
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,8 +2,5 @@
 {
     BFS,
     DFS,
-    // Easy to add more algorithms in the future like:
-    // AStar,
-    // Dijkstra,
-    // etc.
+    // Easy to add more algorithms in the future
 }
