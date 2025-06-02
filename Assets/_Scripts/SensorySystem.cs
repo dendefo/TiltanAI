@@ -5,7 +5,7 @@ using UnityEngine;
 public class SensorySystem : MonoBehaviour
 {
     private List<BaseSensor> sensors = new List<BaseSensor>();
-    
+
     private void Awake()
     {
         // Automatically gather all sensors attached to this GameObject
@@ -20,6 +20,12 @@ public class SensorySystem : MonoBehaviour
             allStimuli.AddRange(sensor.GetCurrentStimuli());
         }
         return allStimuli;
+    }
+    public StimulusInfo GetStrongestStimulus()
+    {
+        return GetAllStimuli()
+            .OrderByDescending(stimulus => stimulus.Intensity)
+            .FirstOrDefault();
     }
 
     public List<StimulusInfo> GetStimuliByType(StimulusType type)
