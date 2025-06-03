@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c383eb1d7631314991e920d456d1140, type: 3}
+  m_Name: GridTagManager
+  m_EditorClassIdentifier: 
+  SurfaceTags:
+  - Name: Walkable
+    Price: 1
+  - Name: NonWalkable
+    Price: 0
+  AgentTags:
+  - Name: 007
+    Surfaces:
+    - Surface:
+        Name: Walkable
+        Price: 1
+      IsActive: 0
+    - Surface:
+        Name: NonWalkable
+        Price: 0
+      IsActive: 0
