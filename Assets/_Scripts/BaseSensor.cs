@@ -40,13 +40,3 @@ public abstract class BaseSensor : MonoBehaviour
         return DetectedStimuli;
     }
 }
-
-// Class to hold information about detected stimuli
-
-// Enum to categorize different types of stimuli
-
-// Visual sensor implementation
-
-// Audio sensor implementation
-
-// Example of a central sensory system that can manage multiple sensors

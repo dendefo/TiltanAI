@@ -25,7 +25,6 @@ public class AgentMovementController : MonoBehaviour
     private float lastRepathTime;
     private Vector3 lastDirection;
 
-
     void Awake()
     {
         pathFinder = GetComponent<PathFinding>();
@@ -50,11 +49,12 @@ public class AgentMovementController : MonoBehaviour
     public void RequestPath()
     {
         if (target == null) return;
+
         var metrics = agent != null ? agent.metrics : null;
         var stopwatch = System.Diagnostics.Stopwatch.StartNew();
 
         int nodesProcessed = 0;
-        pathFinder.OnNodeProcessed = () => nodesProcessed++; // Add this delegate to PathFinding
+        pathFinder.OnNodeProcessed = () => nodesProcessed++;
 
         var path = pathFinder.FindPath(transform.position, target.position, pathAlgorithm);
 
@@ -65,7 +65,6 @@ public class AgentMovementController : MonoBehaviour
         lastRepathTime = Time.time;
         lastDirection = transform.forward;
 
-        // Metrics
         if (metrics != null)
         {
             metrics.lastPathTime = (float)stopwatch.Elapsed.TotalMilliseconds;
@@ -91,27 +90,26 @@ public class AgentMovementController : MonoBehaviour
             return;
 
         Vector3 targetPos = currentPath[pathIndex].worldPosition;
-        Vector3 toTarget = (targetPos - transform.position);
+        Vector3 toTarget = targetPos - transform.position;
         Vector3 desiredDirection = toTarget.normalized;
 
-        // Turning cost: if direction changes sharply, apply a cost/slowdown
         float angle = Vector3.Angle(lastDirection, desiredDirection);
         float turnModifier = 1f + (angle / 180f) * (turnCostMultiplier - 1f);
 
-        // Accelerate towards desired direction
-        velocity = Vector3.MoveTowards(velocity, desiredDirection * maxSpeed / turnModifier, acceleration * Time.deltaTime);
+        velocity = Vector3.MoveTowards(
+            velocity,
+            desiredDirection * maxSpeed / turnModifier,
+            acceleration * Time.deltaTime
+        );
 
-        // Move agent
         transform.position += velocity * Time.deltaTime;
 
-        // Rotate agent smoothly
         if (velocity != Vector3.zero)
         {
             Quaternion targetRot = Quaternion.LookRotation(velocity);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, turnSpeed * Time.deltaTime);
         }
 
-        // Check if reached current node
         if (toTarget.magnitude < 0.2f)
         {
             pathIndex++;
@@ -119,7 +117,6 @@ public class AgentMovementController : MonoBehaviour
         }
     }
 
-    // For external triggers (e.g., dynamic obstacles)
     public void OnPathInvalidated()
     {
         RequestPath();

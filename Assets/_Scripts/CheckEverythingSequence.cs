@@ -5,10 +5,15 @@ using Composite = Unity.Behavior.Composite;
 using Unity.Properties;
 
 [Serializable, GeneratePropertyBag]
-[NodeDescription(name: "CheckEverything", story: "[Self] cheking all his senses", category: "Flow", id: "ccd684fc427f1a3cc708f83b43c47c27")]
+[NodeDescription(
+    name: "CheckEverything",
+    story: "[Self] checking all senses",
+    category: "Flow",
+    id: "ccd684fc427f1a3cc708f83b43c47c27")]
 public partial class CheckEverythingSequence : Composite
 {
-    [SerializeReference] public BlackboardVariable<GameObject> Self;
+    [SerializeReference]
+    public BlackboardVariable<GameObject> Self;
 
     protected override Status OnStart()
     {
@@ -17,6 +22,7 @@ public partial class CheckEverythingSequence : Composite
 
     protected override Status OnUpdate()
     {
+        // Custom logic can be added here.
         return Status.Success;
     }
 

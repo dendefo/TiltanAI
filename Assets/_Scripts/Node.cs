@@ -6,17 +6,17 @@ public class Node
     public Vector3 worldPosition;
     public int gridX;
     public int gridY;
-    public float cost; // Base movement cost (default 1)
-    public float dynamicCost; // For dynamic obstacles
+    public float cost;
+    public float dynamicCost;
 
     public Node(bool walkable, Vector3 worldPos, int x, int y, float cost = 1f)
     {
         this.walkable = walkable;
-        this.worldPosition = worldPos;
-        this.gridX = x;
-        this.gridY = y;
+        worldPosition = worldPos;
+        gridX = x;
+        gridY = y;
         this.cost = cost;
-        this.dynamicCost = 0f;
+        dynamicCost = 0f;
     }
 
     public float TotalCost => cost + dynamicCost;

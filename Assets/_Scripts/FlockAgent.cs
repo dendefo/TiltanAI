@@ -29,7 +29,7 @@ public class FlockAgent : MonoBehaviour
         foreach (var neighbor in neighbors)
         {
             // Skip self when checking neighbors
-            if (neighbor.gameObject == this.gameObject) continue;
+            if (neighbor.gameObject == gameObject) continue;
 
             Vector3 toNeighbor = neighbor.transform.position - transform.position;
             float distance = toNeighbor.magnitude;
@@ -60,7 +60,9 @@ public class FlockAgent : MonoBehaviour
 
         // Gradually rotate the agent towards the desired direction
         if (moveDirection != Vector3.zero)
+        {
             transform.forward = Vector3.Lerp(transform.forward, moveDirection, Time.deltaTime * 5f);
+        }
 
         // Move the agent forward at constant speed
         transform.position += transform.forward * speed * Time.deltaTime;

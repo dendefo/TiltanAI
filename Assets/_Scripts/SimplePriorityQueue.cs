@@ -24,12 +24,16 @@ public class SimplePriorityQueue<T>
 
     public T Dequeue()
     {
-        if (Count == 0) throw new InvalidOperationException("Queue is empty");
+        if (Count == 0)
+            throw new InvalidOperationException("Queue is empty");
+
         var firstPair = _dict.First();
         var queue = firstPair.Value;
         var item = queue.Dequeue();
+
         if (queue.Count == 0)
             _dict.Remove(firstPair.Key);
+
         _set.Remove(item);
         Count--;
         return item;
