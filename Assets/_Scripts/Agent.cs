@@ -1,18 +1,37 @@
 ﻿using UnityEngine;
 
+public enum AgentBehaviorState
+{
+    Escaping,
+    Chasing,
+    Exploring,
+    Patrolling,
+    Reacting
+}
+
 [ExecuteInEditMode] // This makes certain functions run in editor mode
+[RequireComponent(typeof(AgentMovementController))]
 public class Agent : MonoBehaviour
 {
     [Header("Agent Settings")]
     [SerializeField] protected AgentStats baseStats;
     [SerializeField] protected string agentName = "Agent";
-    
+    public AgentProfile profile;
+
     [Header("Agent Group Settings")]
     [SerializeField] private AgentGroup agentGroup;
     [SerializeField] private AgentGroupTextures groupTextures;
     [SerializeField] private SkinnedMeshRenderer skinnedMeshRenderer;
 
     private AgentGroup lastGroup; // To track changes
+
+    [Header("Behavior State")]
+    public AgentBehaviorState currentState = AgentBehaviorState.Exploring;
+
+    // Metrics
+    [HideInInspector] public AgentMetrics metrics = new AgentMetrics();
+
+    private AgentMovementController movementController;
 
     private void OnEnable()
     {
@@ -25,6 +44,20 @@ public class Agent : MonoBehaviour
         UpdateAgentAppearance();
     }
 
+    private void Start()
+    {
+        movementController = GetComponent<AgentMovementController>();
+        if (profile != null && movementController != null)
+        {
+            movementController.maxSpeed = profile.maxSpeed;
+            movementController.acceleration = profile.acceleration;
+            movementController.turnSpeed = profile.turnSpeed;
+            movementController.turnCostMultiplier = profile.turnCostMultiplier;
+            movementController.pathAlgorithm = profile.pathAlgorithm;
+        }
+        UpdatePathfindingAlgorithm();
+    }
+
     private void Update()
     {
         // Check for group changes in editor
@@ -33,6 +66,11 @@ public class Agent : MonoBehaviour
             lastGroup = agentGroup;
             UpdateAgentAppearance();
         }
+
+        // Example: update state based on triggers (replace with your behavior graph logic)
+        // currentState = ...;
+
+        UpdatePathfindingAlgorithm();
     }
 
     private void UpdateAgentAppearance()
@@ -66,6 +104,26 @@ public class Agent : MonoBehaviour
         else
         {
             Debug.LogWarning($"No material found for group {agentGroup} on {gameObject.name}", this);
+        }
+    }
+
+    private void UpdatePathfindingAlgorithm()
+    {
+        if (movementController == null) return;
+
+        switch (currentState)
+        {
+            case AgentBehaviorState.Escaping:
+            case AgentBehaviorState.Chasing:
+                movementController.pathAlgorithm = PathAlgorithm.AStar; // pathfinding1
+                break;
+            case AgentBehaviorState.Exploring:
+            case AgentBehaviorState.Patrolling:
+                movementController.pathAlgorithm = PathAlgorithm.Dijkstra; // pathfinding2
+                break;
+            case AgentBehaviorState.Reacting:
+                movementController.pathAlgorithm = PathAlgorithm.GreedyBestFirst; // pathfinding3
+                break;
         }
     }
 
