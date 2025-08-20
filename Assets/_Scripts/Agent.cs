@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using Unity.Behavior;
+using UnityEngine;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(AgentMovementController))]
@@ -32,6 +34,8 @@ public class Agent : MonoBehaviour
     public AgentMetrics metrics = new AgentMetrics();
 
     private AgentMovementController movementController;
+    private Vector3? currentDestination = null;
+    private float stoppingDistance = 0.2f;
 
     private void OnEnable()
     {
@@ -130,6 +134,8 @@ public class Agent : MonoBehaviour
         }
     }
 
+    public BlackboardVariable<float> Speed { get; internal set; }
+
 #if UNITY_EDITOR
     private void OnValidate()
     {
@@ -143,6 +149,50 @@ public class Agent : MonoBehaviour
         };
     }
 #endif
+    internal void SetDestination(Vector3 destination, float stoppingDistance)
+    {
+        if (movementController == null)
+            movementController = GetComponent<AgentMovementController>();
+
+        this.currentDestination = destination;
+        this.stoppingDistance = stoppingDistance;
+
+        if (movementController != null)
+        {
+            movementController.target = null; // Clear any Transform target
+            movementController.stoppingDistance = stoppingDistance; // propagate threshold
+            movementController.enabled = true;
+            movementController.RequestPathToPosition(destination);
+        }
+    }
+
+    internal bool IsNavigationComplete()
+    {
+        if (movementController == null)
+            movementController = GetComponent<AgentMovementController>();
+
+        if (!currentDestination.HasValue)
+            return true;
+
+        float distance = Vector3.Distance(transform.position, currentDestination.Value);
+        if (distance <= stoppingDistance)
+            return true;
+
+        return false;
+    }
+
+    internal void Stop()
+    {
+        if (movementController == null)
+            movementController = GetComponent<AgentMovementController>();
+
+        currentDestination = null;
+        if (movementController != null)
+        {
+            movementController.target = null;
+            movementController.StopMoving(); // also clears goal in controller
+        }
+    }
 }
 
 public enum AgentBehaviorState

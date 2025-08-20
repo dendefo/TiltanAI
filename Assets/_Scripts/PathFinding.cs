@@ -4,14 +4,7 @@ using System;
 
 public class PathFinding : MonoBehaviour
 {
-    private GridManager grid;
     public Action OnNodeProcessed;
-    void Awake()
-    {
-        grid = GetComponent<GridManager>();
-        
-    }
-
     public List<Node> FindPath(Vector3 startPos, Vector3 targetPos, PathAlgorithm algorithm)
     {
         switch (algorithm)
@@ -31,8 +24,8 @@ public class PathFinding : MonoBehaviour
 
     public List<Node> FindPathBFS(Vector3 startPos, Vector3 targetPos)
     {
-        Node startNode = grid.GetNodeFromWorldPoint(startPos);
-        Node targetNode = grid.GetNodeFromWorldPoint(targetPos);
+        Node startNode = GridManager.Instance.GetNodeFromWorldPoint(startPos);
+        Node targetNode = GridManager.Instance.GetNodeFromWorldPoint(targetPos);
 
         List<Node> path = new List<Node>();
         HashSet<Node> visited = new HashSet<Node>();
@@ -53,7 +46,7 @@ public class PathFinding : MonoBehaviour
                 return path;
             }
 
-            foreach (Node neighbor in grid.GetNeighbors(current))
+            foreach (Node neighbor in GridManager.Instance.GetNeighbors(current))
             {
                 if (!visited.Contains(neighbor) && neighbor.walkable)
                 {
@@ -69,8 +62,8 @@ public class PathFinding : MonoBehaviour
 
     public List<Node> FindPathDijkstra(Vector3 startPos, Vector3 targetPos)
     {
-        Node startNode = grid.GetNodeFromWorldPoint(startPos);
-        Node targetNode = grid.GetNodeFromWorldPoint(targetPos);
+        Node startNode = GridManager.Instance.GetNodeFromWorldPoint(startPos);
+        Node targetNode = GridManager.Instance.GetNodeFromWorldPoint(targetPos);
 
         var openSet = new SimplePriorityQueue<Node>();
         var cameFrom = new Dictionary<Node, Node>();
@@ -86,7 +79,7 @@ public class PathFinding : MonoBehaviour
             if (current == targetNode)
                 return RetracePath(startNode, targetNode, cameFrom);
 
-            foreach (Node neighbor in grid.GetNeighbors(current))
+            foreach (Node neighbor in GridManager.Instance.GetNeighbors(current))
             {
                 if (!neighbor.walkable) continue;
                 float newCost = costSoFar[current] + neighbor.TotalCost;
@@ -103,8 +96,8 @@ public class PathFinding : MonoBehaviour
 
     public List<Node> FindPathAStar(Vector3 startPos, Vector3 targetPos)
     {
-        Node startNode = grid.GetNodeFromWorldPoint(startPos);
-        Node targetNode = grid.GetNodeFromWorldPoint(targetPos);
+        Node startNode = GridManager.Instance.GetNodeFromWorldPoint(startPos);
+        Node targetNode = GridManager.Instance.GetNodeFromWorldPoint(targetPos);
 
         var openSet = new SimplePriorityQueue<Node>();
         var cameFrom = new Dictionary<Node, Node>();
@@ -120,7 +113,7 @@ public class PathFinding : MonoBehaviour
             if (current == targetNode)
                 return RetracePath(startNode, targetNode, cameFrom);
 
-            foreach (Node neighbor in grid.GetNeighbors(current))
+            foreach (Node neighbor in GridManager.Instance.GetNeighbors(current))
             {
                 if (!neighbor.walkable) continue;
                 float tentativeG = gScore[current] + neighbor.TotalCost;
@@ -138,8 +131,8 @@ public class PathFinding : MonoBehaviour
 
     public List<Node> FindPathGreedyBestFirst(Vector3 startPos, Vector3 targetPos)
     {
-        Node startNode = grid.GetNodeFromWorldPoint(startPos);
-        Node targetNode = grid.GetNodeFromWorldPoint(targetPos);
+        Node startNode = GridManager.Instance.GetNodeFromWorldPoint(startPos);
+        Node targetNode = GridManager.Instance.GetNodeFromWorldPoint(targetPos);
 
         var openSet = new SimplePriorityQueue<Node>();
         var cameFrom = new Dictionary<Node, Node>();
@@ -156,7 +149,7 @@ public class PathFinding : MonoBehaviour
 
             visited.Add(current);
 
-            foreach (Node neighbor in grid.GetNeighbors(current))
+            foreach (Node neighbor in GridManager.Instance.GetNeighbors(current))
             {
                 if (!neighbor.walkable || visited.Contains(neighbor)) continue;
                 cameFrom[neighbor] = current;

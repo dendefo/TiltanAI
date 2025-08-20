@@ -525,8 +525,10 @@ GameObject:
   - component: {fileID: 8539753045844507158}
   - component: {fileID: 4629870348241916952}
   - component: {fileID: 6601235407887991375}
-  - component: {fileID: 3005441970834692790}
   - component: {fileID: 3595700230082065735}
+  - component: {fileID: 4143918973189628406}
+  - component: {fileID: 2580382863681345896}
+  - component: {fileID: 3338144887053945531}
   m_Layer: 8
   m_Name: Hunter
   m_TagString: Untagged
@@ -668,28 +670,6 @@ MonoBehaviour:
   viewAngle: 270
   requiresLineOfSight: 1
   minVisualIntensity: 0.1
---- !u!195 &3005441970834692790
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6393316185957262006}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!65 &3595700230082065735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -711,6 +691,78 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4143918973189628406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6393316185957262006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270ee72e417042e9bbea15b163c194ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2580382863681345896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6393316185957262006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 372b635eb91f96843ac2b729f3b43611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 5
+  acceleration: 10
+  turnSpeed: 180
+  turnCostMultiplier: 1.2
+  pathAlgorithm: 1
+  target: {fileID: 0}
+  autoRepath: 1
+  repathInterval: 1
+  stoppingDistance: 0.2
+--- !u!114 &3338144887053945531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6393316185957262006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1082fe5edf540bb98e51153d09f772b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseStats:
+    maxHealth: 100
+    maxEnergy: 100
+    healthRegenRate: 1
+    energyRegenRate: 5
+    physicalDefense: 10
+    magicalDefense: 10
+    elementalResistance: 0
+    baseDamage: 10
+    criticalChance: 0.05
+    criticalMultiplier: 1.5
+    attackSpeed: 1
+    moveSpeed: 5
+    rotationSpeed: 120
+  agentName: Hunter
+  profile: {fileID: 11400000, guid: e4c496429c9ed2e44a676b9a762c0ce9, type: 2}
+  agentGroup: 1
+  groupTextures: {fileID: 11400000, guid: ba7c68c8b70f6a946bb865c02439e878, type: 2}
+  skinnedMeshRenderer: {fileID: 1415986676567285328}
+  currentState: 2
+  metrics:
+    lastPathTime: 0
+    lastNodesProcessed: 0
+    lastPathDistance: 0
+    lastAlgorithm: 0
+    rePathCount: 0
+    lastRePathTimestamp: 0
 --- !u!1 &7057116117782412470
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,7 +978,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d00167a3bf66725439ef5da3c0bbe05a, type: 2}
+  - {fileID: 2100000, guid: 4322e5f550c217648915308ebd25a03b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
